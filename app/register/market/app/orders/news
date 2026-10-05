@@ -1,0 +1,50 @@
+export default function NewOrderPage() {
+  return (
+    <main className="authWrapper">
+      <div className="authCard">
+        <div className="kicker">
+          P2P ORDER
+        </div>
+
+        <h1>Create order.</h1>
+
+        <p>
+          Select a verified offer before a real transaction
+          is created.
+        </p>
+
+        <label className="fieldLabel">
+          USD amount
+        </label>
+
+        <input
+          className="input"
+          type="number"
+          min="0.01"
+          step="0.01"
+          placeholder="100.00"
+        />
+
+        <label className="fieldLabel">
+          Payment method
+        </label>
+
+        <select className="select">
+          <option>
+            Select payment method
+          </option>
+          <option>
+            Bank transfer
+          </option>
+          <option>
+            Supported wallet
+          </option>
+        </select>
+
+        <button className="btn btnPrimary fullButton">
+          CONTINUE
+        </button>
+      </div>
+    </main>
+  );
+}
