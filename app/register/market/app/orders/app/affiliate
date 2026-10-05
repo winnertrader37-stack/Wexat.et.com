@@ -1,0 +1,84 @@
+import {
+  Gift,
+  Users,
+  BadgeDollarSign
+} from "lucide-react";
+
+export default function AffiliatePage() {
+  return (
+    <main className="container dashboard">
+      <div className="dashboardTop">
+        <div>
+          <h1>Affiliate Center</h1>
+          <p>
+            Trade. Refer. Earn.
+          </p>
+        </div>
+
+        <button className="btn btnPrimary">
+          COPY REFERRAL LINK
+        </button>
+      </div>
+
+      <div className="cards3">
+        <Stat
+          icon={<Users />}
+          title="Referrals"
+          value="Live"
+        />
+
+        <Stat
+          icon={<BadgeDollarSign />}
+          title="Eligible Commission"
+          value="Live"
+        />
+
+        <Stat
+          icon={<Gift />}
+          title="Paid Commission"
+          value="Live"
+        />
+      </div>
+
+      <div
+        className="card"
+        style={{marginTop: 18}}
+      >
+        <h3>Affiliate commission</h3>
+
+        <p>
+          Eligible commission should be calculated from
+          platform fees rather than directly from trading
+          volume. Final percentages are controlled by the
+          production backend.
+        </p>
+      </div>
+    </main>
+  );
+}
+
+function Stat({
+  icon,
+  title,
+  value
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+}) {
+  return (
+    <div className="card">
+      <div className="cardIcon">
+        {icon}
+      </div>
+
+      <div className="smallLabel">
+        {title}
+      </div>
+
+      <div className="quoteBig">
+        {value}
+      </div>
+    </div>
+  );
+}
