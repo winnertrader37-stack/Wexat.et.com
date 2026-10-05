@@ -1,0 +1,22 @@
+wexat-p2p/
+├── app/
+│   ├── admin/
+│   │   ├── dashboard/page.tsx
+│   │   └── login/page.tsx
+│   ├── affiliate/page.tsx
+│   ├── api/
+│   │   ├── admin/login/route.ts
+│   │   └── login/route.ts
+│   ├── login/page.tsx
+│   ├── market/page.tsx
+│   ├── orders/new/page.tsx
+│   ├── register/page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── .env.example
+├── next-env.d.ts
+├── next.config.mjs
+├── package.json
+├── tsconfig.json
+└── README.md
