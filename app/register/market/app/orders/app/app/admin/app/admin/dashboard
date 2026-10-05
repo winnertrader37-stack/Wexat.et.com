@@ -1,0 +1,145 @@
+const menu = [
+  "Dashboard",
+  "Users",
+  "KYC",
+  "Orders",
+  "Payments",
+  "Disputes",
+  "Wallets",
+  "Ledger",
+  "Rates",
+  "Fees",
+  "Affiliate",
+  "Risk",
+  "Reports",
+  "Audit Logs"
+];
+
+export default function AdminDashboardPage() {
+  return (
+    <main className="adminLayout">
+      <aside className="adminSidebar">
+        <h3>
+          Wexat
+          <span style={{color: "var(--green)"}}>
+            .p2p
+          </span>
+        </h3>
+
+        {menu.map((item, index) => (
+          <a
+            href="#"
+            className={
+              index === 0 ? "active" : ""
+            }
+            key={item}
+          >
+            {item}
+          </a>
+        ))}
+      </aside>
+
+      <section className="adminContent">
+        <div className="dashboardTop">
+          <div>
+            <h1>Admin Control</h1>
+            <p>
+              Wexat.p2p Super Admin Operations Center.
+            </p>
+          </div>
+
+          <button className="btn dangerButton">
+            PAUSE ALL TRADING
+          </button>
+        </div>
+
+        <div className="stats">
+          <AdminStat
+            title="Users"
+            value="Live data"
+          />
+
+          <AdminStat
+            title="Pending KYC"
+            value="Live data"
+          />
+
+          <AdminStat
+            title="Active Orders"
+            value="Live data"
+          />
+
+          <AdminStat
+            title="Disputes"
+            value="Live data"
+          />
+        </div>
+
+        <div
+          className="cards3"
+          style={{marginTop: 18}}
+        >
+          <Control
+            title="Wallet Control"
+            text="Ledger-based credit and debit adjustments with before/after records."
+          />
+
+          <Control
+            title="Rate Control"
+            text="Configure approved reference rates, spreads and platform fees."
+          />
+
+          <Control
+            title="Risk Control"
+            text="Freeze withdrawals, suspend trading and hold high-risk transactions."
+          />
+
+          <Control
+            title="KYC Control"
+            text="Approve, reject or request additional verification information."
+          />
+
+          <Control
+            title="Dispute Control"
+            text="Review evidence, payment events, chat and ledger timeline."
+          />
+
+          <Control
+            title="Audit Logs"
+            text="Record who changed what, when, why and the related reference."
+          />
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function AdminStat({
+  title,
+  value
+}: {
+  title: string;
+  value: string;
+}) {
+  return (
+    <div className="stat">
+      <small>{title}</small>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function Control({
+  title,
+  text
+}: {
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="card">
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
