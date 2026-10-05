@@ -1,0 +1,32 @@
+import { NextResponse } from "next/server";
+
+export async function POST() {
+  /*
+    FAIL-CLOSED AUTHENTICATION
+
+    Production implementation must:
+
+    1. Find user by email/phone.
+    2. Verify Argon2id/bcrypt password hash.
+    3. Check account status.
+    4. Require 2FA when enabled/required.
+    5. Apply rate limiting.
+    6. Rotate/create server-side session.
+    7. Set HttpOnly + Secure + SameSite cookie.
+    8. Record login event.
+    9. Record suspicious login/risk events.
+
+    No fake login is performed here.
+  */
+
+  return NextResponse.json(
+    {
+      ok: false,
+      error:
+        "Authentication backend is not configured yet."
+    },
+    {
+      status: 501
+    }
+  );
+}
