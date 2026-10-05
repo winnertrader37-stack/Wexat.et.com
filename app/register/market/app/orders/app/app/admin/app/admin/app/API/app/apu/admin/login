@@ -1,0 +1,33 @@
+import { NextResponse } from "next/server";
+
+export async function POST() {
+  /*
+    SUPER ADMIN AUTHENTICATION
+
+    Production implementation must:
+
+    - Verify ADMIN_EMAIL from secure server configuration.
+    - Verify password against ADMIN_PASSWORD_HASH.
+    - Verify TOTP/WebAuthn 2FA.
+    - Rate-limit failed attempts.
+    - Lock temporarily after repeated failures.
+    - Create a server-side admin session.
+    - Set Secure + HttpOnly + SameSite cookie.
+    - Record IP/session/device information.
+    - Write an immutable audit event.
+
+    IMPORTANT:
+    Never place the admin password itself in source code.
+  */
+
+  return NextResponse.json(
+    {
+      ok: false,
+      error:
+        "Admin authentication is fail-closed until the production database, password hashing, 2FA and session service are configured."
+    },
+    {
+      status: 501
+    }
+  );
+}
