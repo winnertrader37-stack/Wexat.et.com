@@ -1,0 +1,73 @@
+export default function AdminLoginPage() {
+  return (
+    <main className="authWrapper">
+      <div className="authCard">
+        <div className="kicker">
+          SUPER ADMIN • SECURE AREA
+        </div>
+
+        <h1>Admin Login</h1>
+
+        <p>
+          Only the configured super-admin account can
+          access the Wexat.p2p control panel.
+        </p>
+
+        <form
+          action="/api/admin/login"
+          method="POST"
+        >
+          <label className="fieldLabel">
+            Admin email
+          </label>
+
+          <input
+            className="input"
+            name="email"
+            type="email"
+            required
+            autoComplete="username"
+          />
+
+          <label className="fieldLabel">
+            Password
+          </label>
+
+          <input
+            className="input"
+            name="password"
+            type="password"
+            required
+            autoComplete="current-password"
+          />
+
+          <label className="fieldLabel">
+            2FA code
+          </label>
+
+          <input
+            className="input"
+            name="otp"
+            inputMode="numeric"
+            pattern="[0-9]{6}"
+            maxLength={6}
+            placeholder="000000"
+            required
+          />
+
+          <button
+            className="btn btnPrimary fullButton"
+            type="submit"
+          >
+            SECURE LOGIN
+          </button>
+        </form>
+
+        <p style={{fontSize: 12}}>
+          Admin credentials are never stored in frontend
+          source code.
+        </p>
+      </div>
+    </main>
+  );
+}
